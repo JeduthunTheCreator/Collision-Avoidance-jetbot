@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+
+  <world name="default">
+    <!-- Ground -->
+    <include>
+      <uri>model://model://ground_plane</uri>
+    </include>
+
+    <!-- Light source -->
+    <include>
+      <uri>model://model://sun</uri>
+    </include>
+  <scene>
+    <ambient>0.0 0.0 0.0 1.0</ambient>
+    <shadows>0</shadows>
+  </scene>
+  <light type="point_light" name="light1">
+    <pose> 0 0 4.5 0 0 0 </pose>
+  </light>
+
+    <!-- OctoMap plugin -->
+    <plugin name="octomap_plugin" filename="libOctomapWorldPlugin.so">
+      <octomapResolution>0.05</octomapResolution>
+      <frameName>world</frameName>
+      <occupancyThreshold>0.7</occupancyThreshold>
+      <maxRange>5.0</maxRange>
+    </plugin>
+
+    <!-- Include other models -->
+    <include>
+      <name>mir_world</name>
+      <uri>model://model:://mir_world</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>box</name>
+      <uri>model://model:://box</uri>
+      <pose>2.7 3 0.25 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>sphere</name>
+      <uri>model://model:://sphere</uri>
+      <pose>-3.48 -1.42 0.25 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>cafe_table</name>
+      <uri>model://model:://cafe_table</uri>
+      <pose>1.37 -3.05 0.1 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>chair</name>
+      <uri>model://model:://Chair</uri>
+      <pose>0.84 -3.11 0.0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>bookshelf</name>
+      <uri>model://model:://bookshelf</uri> 
+      <pose>2.25 0.4 0.0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>person_standing</name>
+      <uri>model://model:://person_standing</uri>
+      <pose>-4.8 4 0.0 0 0 1.5</pose>
+    </include>
+
+  </world>
+</sdf>
+
